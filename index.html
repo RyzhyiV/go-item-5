@@ -76,14 +76,14 @@
       <section class="hero">
         <div class="container hero-container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="hero-button" type="button">Заказать услугу</button>
+          <button class="button" type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <!-- =================== /HERO =================== -->
       <!-- =================== BENEFITS =================== -->
       <section class="section">
         <div class="container">
-          <h2 class="benefits-section-title">Наши преимущества</h2>
+          <h2 class="visually-hidden">Наши преимущества</h2>
           <ul class="benefits list-reset">
             <li class="benefits-card">
               <div class="benefits-icon-wrapper">
@@ -461,9 +461,112 @@
             </li>
           </ul>
         </div>
+        <div class="footer-form-container">
+          <form name="subscription-form" class="subscription-form">
+            <p class="subscription-form-description">Подпишитесь на рассылку</p>
+            <div class="subscription-form-wrapper">
+              <input
+                type="email"
+                name="user_email"
+                class="subscription-form-email"
+                required
+                placeholder="E-mail"
+              />
+              <button type="submit" class="button">
+                Подписаться
+                <svg class="subscription-form-send-icon">
+                  <use href="./images/sprite.svg#send-icon"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </footer>
     <!-- =================== /FOOTER =================== -->
-    <script src="./script/js.js"></script>
+    <!-- =================== BACKDROP =================== -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg class="modal-close-btn-icon">
+            <use href="./images/sprite.svg#close-icon"></use>
+          </svg>
+        </button>
+        <form name="call-back-form" class="call-back-form">
+          <p class="call-back-form-description">Оставьте свои данные, мы вам перезвоним</p>
+          <label class="call-back-form-lable"
+            ><span class="call-back-form-lable-kay">Имя</span>
+            <span class="call-back-form-input-wrapper">
+              <input
+                type="text"
+                class="call-back-form-input"
+                name="user_name"
+                required
+                pattern="[a-zA-Z]*"
+                title="Name"
+              />
+              <svg class="call-back-form-input-icon">
+                <use href="./images/sprite.svg#person-icon"></use>
+              </svg>
+            </span>
+          </label>
+          <label class="call-back-form-lable"
+            ><span class="call-back-form-lable-kay">Телефон</span>
+            <span class="call-back-form-input-wrapper">
+              <input
+                type="tel"
+                class="call-back-form-input"
+                name="user_phone_number"
+                required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                title="xxx-xxx-xx-xx"
+              />
+              <svg class="call-back-form-input-icon">
+                <use href="./images/sprite.svg#phone-icon"></use>
+              </svg>
+            </span>
+          </label>
+          <label class="call-back-form-lable"
+            ><span class="call-back-form-lable-kay">Почта</span>
+            <span class="call-back-form-input-wrapper">
+              <input type="email" class="call-back-form-input" name="user_email" required />
+              <svg class="call-back-form-input-icon">
+                <use href="./images/sprite.svg#email-icon"></use>
+              </svg>
+            </span>
+          </label>
+          <label class="call-back-form-lable"
+            ><span class="call-back-form-lable-kay">Комментарий</span
+            ><textarea
+              class="call-back-form-message"
+              name="user_message"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
+          <label class="call-back-form-checkbox-lable">
+            <span class="call-back-form-checkbox-wrapper">
+              <input
+                type="checkbox"
+                class="call-back-form-checkbox visually-hidden"
+                name="checkbox_policy"
+                id="checkbox_policy"
+              /><svg class="call-back-form-checkbox-icon">
+                <use href="./images/sprite.svg#checkbox-icon"></use></svg
+              ><span class="call-back-form-checkbox-lable-kay"
+                >Соглашаюсь с рассылкой и принимаю&nbsp;<a
+                  href="#"
+                  class="call-back-form-checkbox-link link-reset"
+                  >Условия договора</a
+                ></span
+              >
+            </span>
+          </label>
+          <button type="submit" class="button">Отправить</button>
+        </form>
+      </div>
+    </div>
+    <!-- =================== /BACKDROP =================== -->
+    <script src="./js/modal.js"></script>
+    <script src="./js/js.js"></script>
   </body>
 </html>
